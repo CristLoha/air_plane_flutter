@@ -1,3 +1,4 @@
+import 'package:air_plane/shared/theme.dart';
 import 'package:flutter/material.dart';
 
 class GetStartedPage extends StatelessWidget {
@@ -24,6 +25,10 @@ class GetStartedPage extends StatelessWidget {
             children: [
               Text(
                 'Fly Like a Bird',
+                style: whiteTextStyle.copyWith(
+                  fontSize: 32,
+                  fontWeight: semiBold,
+                ),
               )
             ],
           )

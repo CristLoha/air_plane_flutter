@@ -31,7 +31,7 @@ class SplashPage extends StatelessWidget {
                 fontWeight: medium,
                 letterSpacing: 10,
               ),
-            )
+            ),
           ],
         ),
       ),
