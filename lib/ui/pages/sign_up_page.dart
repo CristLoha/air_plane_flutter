@@ -123,7 +123,7 @@ class SignUpPage extends StatelessWidget {
 
     Widget hobbyInput() {
       return Container(
-        margin: EdgeInsets.only(bottom: 20),
+        margin: EdgeInsets.only(bottom: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -154,6 +154,49 @@ class SignUpPage extends StatelessWidget {
       );
     }
 
+    Widget submitButton() {
+      return Container(
+        width: double.infinity,
+        height: 55,
+        child: TextButton(
+          onPressed: () {},
+          style: TextButton.styleFrom(
+            backgroundColor: kPrimaryColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                defaultRadius,
+              ),
+            ),
+          ),
+          child: Text(
+            'Get Started,',
+            style: whiteTextStyle.copyWith(
+              fontSize: 18,
+              fontWeight: medium,
+            ),
+          ),
+        ),
+      );
+    }
+
+    Widget tacButton() {
+      return Container(
+        alignment: Alignment.center,
+        margin: EdgeInsets.only(
+          top: 50,
+          bottom: 73,
+        ),
+        child: Text(
+          'Terms and Conditions',
+          style: greyTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: light,
+            decoration: TextDecoration.underline,
+          ),
+        ),
+      );
+    }
+
     Widget inputSection() {
       return Container(
         margin: EdgeInsets.only(
@@ -175,6 +218,7 @@ class SignUpPage extends StatelessWidget {
             emailInput(),
             passInput(),
             hobbyInput(),
+            submitButton(),
           ],
         ),
       );
@@ -190,6 +234,7 @@ class SignUpPage extends StatelessWidget {
           children: [
             title(),
             inputSection(),
+            tacButton(),
           ],
         ),
       ),
