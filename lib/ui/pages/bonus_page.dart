@@ -47,23 +47,60 @@ class BonusPage extends StatelessWidget {
                           fontWeight: medium,
                           fontSize: 20,
                         ),
+                        overflow: TextOverflow.ellipsis,
                       )
                     ],
                   ),
                 ),
                 Container(
-                    width: 24,
-                    height: 24,
-                    margin: EdgeInsets.only(
-                      right: 6,
-                    ),
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
+                  width: 24,
+                  height: 24,
+                  margin: EdgeInsets.only(
+                    right: 6,
+                  ),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
                       image: AssetImage('assets/icon_plane.png'),
-                    ))),
+                    ),
+                  ),
+                ),
+                Text(
+                  'Pay',
+                  style: whiteTextStyle.copyWith(
+                    fontSize: 16,
+                    fontWeight: medium,
+                  ),
+                )
               ],
             )
           ],
+        ),
+      );
+    }
+
+    Widget title() {
+      return Container(
+        margin: EdgeInsets.only(top: 80),
+        child: Text(
+          'Big Bonus 🎉',
+          style: blackTextStyle.copyWith(
+            fontSize: 32,
+            fontWeight: semiBold,
+          ),
+        ),
+      );
+    }
+
+    Widget subtitle() {
+      return Container(
+        margin: EdgeInsets.only(top: 10),
+        child: Text(
+          'We give you early credit so that\nyou can buy a flight ticket',
+          style: greyTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: light,
+          ),
+          textAlign: TextAlign.center,
         ),
       );
     }
@@ -75,6 +112,8 @@ class BonusPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             bonusCard(),
+            title(),
+            subtitle(),
           ],
         ),
       ),
