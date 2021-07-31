@@ -31,16 +31,36 @@ class BonusPage extends StatelessWidget {
           children: [
             Row(
               children: [
-                Column(
-                  children: [
-                    Text(
-                      'Name',
-                      style: whiteTextStyle.copyWith(
-                        fontWeight: light,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Name',
+                        style: whiteTextStyle.copyWith(
+                          fontWeight: light,
+                        ),
                       ),
-                    )
-                  ],
-                )
+                      Text(
+                        'Kezia Anne',
+                        style: whiteTextStyle.copyWith(
+                          fontWeight: medium,
+                          fontSize: 20,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                    width: 24,
+                    height: 24,
+                    margin: EdgeInsets.only(
+                      right: 6,
+                    ),
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                      image: AssetImage('assets/icon_plane.png'),
+                    ))),
               ],
             )
           ],
