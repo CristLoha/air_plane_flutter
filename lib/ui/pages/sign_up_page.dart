@@ -40,7 +40,7 @@ class SignUpPage extends StatelessWidget {
     Widget passInput() {
       return CustomTextFormField(
         title: 'Password',
-        hintText: 'Your password',
+        hintText: 'Your ',
         obscureText: true,
       );
     }
