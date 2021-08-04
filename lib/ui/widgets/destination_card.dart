@@ -42,7 +42,7 @@ class DestinationCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(18),
               image: DecorationImage(
                 image: AssetImage(
-                  'assets/image_destination1.png',
+                  imageUrl,
                 ),
               ),
             ),
@@ -76,7 +76,7 @@ class DestinationCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      '4.8',
+                      rating.toString(),
                       style: blackTextStyle.copyWith(
                         fontWeight: medium,
                       ),
@@ -92,7 +92,7 @@ class DestinationCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Lake Ciliwung',
+                  name,
                   style: blackTextStyle.copyWith(
                     fontSize: 18,
                     fontWeight: medium,
@@ -102,7 +102,7 @@ class DestinationCard extends StatelessWidget {
                   height: 5,
                 ),
                 Text(
-                  'Tanggerang',
+                  city,
                   style: greenTextStyle.copyWith(
                     fontWeight: light,
                   ),

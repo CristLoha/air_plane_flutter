@@ -65,9 +65,12 @@ class HomePage extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-              DestinationCard(),
-              DestinationCard(),
-              DestinationCard(),
+              DestinationCard(
+                name: 'Lake Ciliwung',
+                city: 'Tangerang',
+                imageUrl: 'assets/image_destination1.png',
+                rating: 4.8,
+              ),
             ],
           ),
         ),
