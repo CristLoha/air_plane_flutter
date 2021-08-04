@@ -1,5 +1,6 @@
 import 'package:air_plane/shared/theme.dart';
 import 'package:air_plane/ui/widgets/destination_card.dart';
+import 'package:air_plane/ui/widgets/destination_tile.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -71,8 +72,44 @@ class HomePage extends StatelessWidget {
                 imageUrl: 'assets/image_destination1.png',
                 rating: 4.8,
               ),
+              DestinationCard(
+                name: 'White House',
+                city: 'Spain',
+                imageUrl: 'assets/image_destination2.png',
+                rating: 4.7,
+              ),
+              DestinationCard(
+                name: 'Hill Heyo',
+                city: 'Monaco',
+                imageUrl: 'assets/image_destination3.png',
+                rating: 4.8,
+              ),
             ],
           ),
+        ),
+      );
+    }
+
+    Widget newDestination() {
+      return Container(
+        margin: EdgeInsets.only(
+          top: 30,
+          left: defaultMargin,
+          right: defaultMargin,
+        ),
+        child: Column(
+          children: [
+            Text(
+              'New This Year',
+              style: blackTextStyle.copyWith(
+                fontSize: 18,
+                fontWeight: semiBold,
+              ),
+            ),
+            DestinationTile(),
+            DestinationTile(),
+            DestinationTile(),
+          ],
         ),
       );
     }
@@ -81,6 +118,7 @@ class HomePage extends StatelessWidget {
       children: [
         header(),
         popularDestination(),
+        newDestination(),
       ],
     );
   }

@@ -103,7 +103,7 @@ class DestinationCard extends StatelessWidget {
                 ),
                 Text(
                   city,
-                  style: greenTextStyle.copyWith(
+                  style: greyTextStyle.copyWith(
                     fontWeight: light,
                   ),
                 ),
