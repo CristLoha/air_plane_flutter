@@ -81,7 +81,7 @@ class DestinationTile extends StatelessWidget {
                 ),
               ),
               Text(
-                '4.9',
+                rating.toString(),
                 style: blackTextStyle.copyWith(
                   fontWeight: medium,
                 ),
