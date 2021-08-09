@@ -1,4 +1,5 @@
 import 'package:air_plane/shared/theme.dart';
+import 'package:air_plane/ui/widgets/custom_button.dart';
 import 'package:air_plane/ui/widgets/seat_item.dart';
 import 'package:flutter/material.dart';
 
@@ -181,15 +182,12 @@ class ChooseSeatPage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(
-                    width: 48,
-                    height: 48,
-                    decoration: BoxDecoration(
-                      color: kUnavailableColor,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
+                  Seatitem(
+                    status: 2,
                   ),
-                  Seatitem(),
+                  Seatitem(
+                    status: 2,
+                  ),
                   Container(
                     width: 48,
                     height: 48,
@@ -202,12 +200,221 @@ class ChooseSeatPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Seatitem(),
-                  Seatitem(),
+                  Seatitem(
+                    status: 0,
+                  ),
+                  Seatitem(
+                    status: 2,
+                  ),
+                ],
+              ),
+            ),
+
+            /// NOTE: SEAT 2
+            Container(
+              margin: EdgeInsets.only(
+                top: 16,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Seatitem(
+                    status: 0,
+                  ),
+                  Seatitem(
+                    status: 0,
+                  ),
+                  Container(
+                    width: 48,
+                    height: 48,
+                    child: Center(
+                      child: Text(
+                        '2',
+                        style: greyTextStyle.copyWith(
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Seatitem(
+                    status: 0,
+                  ),
+                  Seatitem(
+                    status: 2,
+                  ),
+                ],
+              ),
+            ),
+
+            /// NOTE: SEAT 4
+            Container(
+              margin: EdgeInsets.only(
+                top: 16,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Seatitem(
+                    status: 1,
+                  ),
+                  Seatitem(
+                    status: 1,
+                  ),
+                  Container(
+                    width: 48,
+                    height: 48,
+                    child: Center(
+                      child: Text(
+                        '3',
+                        style: greyTextStyle.copyWith(
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Seatitem(
+                    status: 0,
+                  ),
+                  Seatitem(
+                    status: 0,
+                  ),
+                ],
+              ),
+            ),
+
+            /// NOTE: SEAT 1
+            Container(
+              margin: EdgeInsets.only(
+                top: 16,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Seatitem(
+                    status: 0,
+                  ),
+                  Seatitem(
+                    status: 0,
+                  ),
+                  Container(
+                    width: 48,
+                    height: 48,
+                    child: Center(
+                      child: Text(
+                        '4',
+                        style: greyTextStyle.copyWith(
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Seatitem(
+                    status: 0,
+                  ),
+                  Seatitem(
+                    status: 2,
+                  ),
+                ],
+              ),
+            ),
+
+            /// NOTE: SEAT 5
+            Container(
+              margin: EdgeInsets.only(
+                top: 16,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Seatitem(
+                    status: 0,
+                  ),
+                  Seatitem(
+                    status: 2,
+                  ),
+                  Container(
+                    width: 48,
+                    height: 48,
+                    child: Center(
+                      child: Text(
+                        '5',
+                        style: greyTextStyle.copyWith(
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Seatitem(
+                    status: 2,
+                  ),
+                  Seatitem(
+                    status: 0,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                top: 30,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Your seat',
+                    style: greyTextStyle.copyWith(
+                      fontWeight: light,
+                    ),
+                  ),
+                  Text(
+                    'A3, B3',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: medium,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            /// NOTE: TOTAl
+            Container(
+              margin: EdgeInsets.only(
+                top: 16,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Total',
+                    style: greyTextStyle.copyWith(
+                      fontWeight: light,
+                    ),
+                  ),
+                  Text(
+                    'IDR 540.000.000',
+                    style: purpleTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: semiBold,
+                    ),
+                  ),
                 ],
               ),
             )
           ],
+        ),
+
+        /// NOTE: YOUR SEAT
+      );
+    }
+
+    Widget checkoutbutton() {
+      return CustomButton(
+        title: 'Continue to Checkout',
+        onPressed: () {},
+        margin: EdgeInsets.only(
+          top: 30,
+          bottom: 46,
         ),
       );
     }
@@ -222,6 +429,7 @@ class ChooseSeatPage extends StatelessWidget {
           title(),
           seatStatus(),
           selectSeat(),
+          checkoutbutton(),
         ],
       ),
     );
