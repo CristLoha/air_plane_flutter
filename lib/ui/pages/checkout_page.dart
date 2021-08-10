@@ -211,6 +211,81 @@ class CheckouPage extends StatelessWidget {
       );
     }
 
+    Widget paymentDetails() {
+      return Container(
+        margin: EdgeInsets.only(top: 30),
+        padding: EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 30,
+        ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(18),
+          color: kWhiteColor,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Payment Details',
+              style: blackTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: semiBold,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 16),
+              child: Row(
+                children: [
+                  Container(
+                    width: 100,
+                    height: 70,
+                    margin: EdgeInsets.only(
+                      right: 16,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(18),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(
+                          'assets/image_card.png',
+                        ),
+                      ),
+                    ),
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 24,
+                            height: 24,
+                            margin: EdgeInsets.only(
+                              right: 6,
+                            ),
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage('assets/icon_plane.png'),
+                              ),
+                            ),
+                          ),
+                          Text(
+                            'Pay',
+                            style: whiteTextStyle.copyWith(
+                              fontSize: 16,
+                              fontWeight: medium,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: ListView(
@@ -220,6 +295,7 @@ class CheckouPage extends StatelessWidget {
         children: [
           route(),
           bookingDetails(),
+          paymentDetails(),
         ],
       ),
     );
