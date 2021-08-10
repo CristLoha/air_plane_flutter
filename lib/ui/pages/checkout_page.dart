@@ -1,5 +1,6 @@
 import 'package:air_plane/shared/theme.dart';
 import 'package:air_plane/ui/pages/booking_item_details.dart';
+import 'package:air_plane/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -277,11 +278,63 @@ class CheckouPage extends StatelessWidget {
                         ],
                       ),
                     ),
+                  ),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'IDR 80.400.000',
+                          style: blackTextStyle.copyWith(
+                            fontSize: 18,
+                            fontWeight: medium,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          'Current Balance',
+                          style: greyTextStyle.copyWith(
+                            fontWeight: light,
+                          ),
+                        ),
+                      ],
+                    ),
                   )
                 ],
               ),
-            )
+            ),
           ],
+        ),
+      );
+    }
+
+    Widget payNowButton() {
+      return CustomButton(
+        title: 'Pay Now',
+        onPressed: () {},
+        margin: EdgeInsets.only(
+          top: 30,
+        ),
+      );
+    }
+
+    Widget tacButton() {
+      return Container(
+        alignment: Alignment.center,
+        margin: EdgeInsets.only(
+          top: 30,
+          bottom: 30,
+        ),
+        child: Text(
+          'Terms and Conditions',
+          style: greyTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: light,
+            decoration: TextDecoration.underline,
+          ),
         ),
       );
     }
@@ -296,6 +349,8 @@ class CheckouPage extends StatelessWidget {
           route(),
           bookingDetails(),
           paymentDetails(),
+          payNowButton(),
+          tacButton(),
         ],
       ),
     );
